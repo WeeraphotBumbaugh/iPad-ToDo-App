@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld of %lld completed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld completed"
+          }
+        }
+      }
+    },
+    "Account" : {
+
+    },
+    "Add New Group" : {
+
+    },
+    "Add Task" : {
+
+    },
+    "Appearance" : {
+
+    },
+    "Attach To" : {
+
+    },
+    "Auto" : {
+
+    },
+    "Completion Progress" : {
+
+    },
+    "Dark Mode" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Done" : {
+
+    },
+    "Existing Parent" : {
+
+    },
+    "Group Deleted" : {
+
+    },
+    "Group Name (e.g., Work)" : {
+
+    },
+    "Localizations (English)" : {
+      "comment" : "\"My Tasks\" = \"My Tasks\";\n\"Account\" = \"Account\";\n\"My TODO Tracker\" = \"My TODO Tracker\";\n\"Toggle Sidebar\" = \"Toggle Sidebar\";\n\"Manage Groups\" = \"Manage Groups\";\n\"Delete\" = \"Delete\";\n\"Welcome\" = \"Welcome\";\n\"Select a group from the sidebar to get started\" = \"Select a group from the sidebar to get started\";\n\"Group Deleted\" = \"Group Deleted\";\n\"The selected group no longer exists. Please select another one.\" = \"The selected group no longer exists. Please select another one.\";\n\"Completion Progress\" = \"Completion Progress\";\n\"No tasks yet.\" = \"No tasks yet.\";\n\"Tasks\" = \"Tasks\";\n\"No Tasks Yet\" = \"No Tasks Yet\";\n\"Tap the '+' button to add your first task.\" = \"Tap the '+' button to add your first task.\";\n\"Add Task\" = \"Add Task\";\n\"New Task\" = \"New Task\";\n\"Profile\" = \"Profile\";\n\"Name\" = \"Name\";\n\"Appearance\" = \"Appearance\";\n\"Dark Mode\" = \"Dark Mode\";\n\"Preferences\" = \"Preferences\";\n\"Notifications\" = \"Notifications\";\n\"Settings\" = \"Settings\";\n\"Sign Out\" = \"Sign Out\";\n\"Attach To\" = \"Attach To\";\n\"Add New Group\" = \"Add New Group\";\n\"Group Name (e.g., Work)\" = \"Group Name (e.g., Work)\";\n\"Mode\" = \"Mode\";\n\"Auto\" = \"Auto\";\n\"Existing Parent\" = \"Existing Parent\";\n\"New Parent\" = \"New Parent\";\n\"Parent\" = \"Parent\";\n\"Parent Title (e.g., My Groups)\" = \"Parent Title (e.g., My Groups)\";\n\"Parent Symbol (SF Symbol, e.g., folder)\" = \"Parent Symbol (SF Symbol, e.g., folder)\";\n\"No parents yet. Choose New Parent or Auto.\" = \"No parents yet. Choose New Parent or Auto.\";\n\"Will attach to the first parent, or create a default one.\" = \"Will attach to the first parent, or create a default one.\";\n\"My Groups\" = \"My Groups\";\n\"Done\" = \"Done\";\n",
+      "extractionState" : "manual"
+    },
+    "Localizations (Spanish)" : {
+      "comment" : "\"My Tasks\" = \"Mis tareas\";\n\"Account\" = \"Cuenta\";\n\"My TODO Tracker\" = \"Mi gestor de tareas\";\n\"Toggle Sidebar\" = \"Mostrar/ocultar barra lateral\";\n\"Manage Groups\" = \"Administrar grupos\";\n\"Delete\" = \"Eliminar\";\n\"Welcome\" = \"Bienvenido\";\n\"Select a group from the sidebar to get started\" = \"Selecciona un grupo en la barra lateral para empezar\";\n\"Group Deleted\" = \"Grupo eliminado\";\n\"The selected group no longer exists. Please select another one.\" = \"El grupo seleccionado ya no existe. Selecciona otro.\";\n\"Completion Progress\" = \"Progreso de finalización\";\n\"No tasks yet.\" = \"Aún no hay tareas.\";\n\"Tasks\" = \"Tareas\";\n\"No Tasks Yet\" = \"Sin tareas\";\n\"Tap the '+' button to add your first task.\" = \"Toca el botón '+' para añadir tu primera tarea.\";\n\"Add Task\" = \"Añadir tarea\";\n\"New Task\" = \"Nueva tarea\";\n\"Profile\" = \"Perfil\";\n\"Name\" = \"Nombre\";\n\"Appearance\" = \"Apariencia\";\n\"Dark Mode\" = \"Modo oscuro\";\n\"Preferences\" = \"Preferencias\";\n\"Notifications\" = \"Notificaciones\";\n\"Settings\" = \"Ajustes\";\n\"Sign Out\" = \"Cerrar sesión\";\n\"Attach To\" = \"Adjuntar a\";\n\"Add New Group\" = \"Añadir nuevo grupo\";\n\"Group Name (e.g., Work)\" = \"Nombre del grupo (p. ej., Trabajo)\";\n\"Mode\" = \"Modo\";\n\"Auto\" = \"Automático\";\n\"Existing Parent\" = \"Padre existente\";\n\"New Parent\" = \"Nuevo padre\";\n\"Parent\" = \"Padre\";\n\"Parent Title (e.g., My Groups)\" = \"Título del padre (p. ej., Mis grupos)\";\n\"Parent Symbol (SF Symbol, e.g., folder)\" = \"Símbolo del padre (SF Symbol, p. ej., folder)\";\n\"No parents yet. Choose New Parent or Auto.\" = \"Aún no hay padres. Elige Nuevo padre o Automático.\";\n\"Will attach to the first parent, or create a default one.\" = \"Se adjuntará al primer padre o se creará uno por defecto.\";\n\"My Groups\" = \"Mis grupos\";\n\"Done\" = \"Listo\";\n",
+      "extractionState" : "manual"
+    },
+    "Manage Groups" : {
+
+    },
+    "Mark complete" : {
+
+    },
+    "Mark incomplete" : {
+
+    },
+    "Mode" : {
+
+    },
+    "My Groups" : {
+
+    },
+    "My Profile" : {
+
+    },
+    "My Tasks" : {
+
+    },
+    "My TODO Tracker" : {
+
+    },
+    "Name" : {
+
+    },
+    "New Parent" : {
+
+    },
+    "New Task" : {
+
+    },
+    "No parents yet. Choose New Parent or Auto." : {
+
+    },
+    "No Tasks Yet" : {
+
+    },
+    "No tasks yet." : {
+
+    },
+    "Notifications" : {
+
+    },
+    "Parent" : {
+
+    },
+    "Parent Symbol (SF Symbol, e.g., folder)" : {
+
+    },
+    "Parent Title (e.g., My Groups)" : {
+
+    },
+    "Preferences" : {
+
+    },
+    "Profile" : {
+
+    },
+    "Select a group from the sidebar to get started" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Sign Out" : {
+
+    },
+    "Tap the '+' button to add your first task." : {
+
+    },
+    "Tasks" : {
+
+    },
+    "The selected group no longer exists. Please select another one." : {
+
+    },
+    "Toggle Sidebar" : {
+
+    },
+    "Welcome" : {
+
+    },
+    "Will attach to the first parent, or create a default one." : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,50 +1,43 @@
 //
-//  TaskGroupDetailView.swift (was PlaceHolderView.swift)
+//  TaskGroupDetailView.swift
 //  TodoAppTask
-//
-//  Created by SDGKU on 01/11/25.
 //
 
 import SwiftUI
 
 struct TaskGroupDetailView: View {
-    
+
     @Binding var group: TaskGroup
     @FocusState private var focusedTaskID: UUID?
-    
+
     var appAccentColor: Color
-    
+
     private var completedTaskCount: Int {
         group.tasks.filter { $0.isCompleted }.count
     }
-    
+
     private var completionPercentage: Double {
-        if group.tasks.isEmpty {
-            return 0.0
-        }
+        guard !group.tasks.isEmpty else { return 0.0 }
         return Double(completedTaskCount) / Double(group.tasks.count)
     }
-    
+
     private var completionText: String {
-        if group.tasks.isEmpty {
-            return "No tasks yet."
-        }
-        return "\(completedTaskCount) of \(group.tasks.count) completed"
+        guard !group.tasks.isEmpty else { return String(localized: "No tasks yet.") }
+        return String(localized: "\(completedTaskCount) of \(group.tasks.count) completed")
     }
-        
+
     var body: some View {
         NavigationStack {
             List {
-                
                 Section {
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Completion Progress")
+                        Text(String(localized: "Completion Progress"))
                             .font(.headline)
-                        
+
                         ProgressView(value: completionPercentage)
                             .tint(group.tasks.isEmpty ? .gray : appAccentColor)
                             .animation(.snappy, value: completionPercentage)
-                        
+
                         Text(completionText)
                             .font(.caption)
                             .foregroundStyle(.secondary)
@@ -57,29 +50,19 @@ struct TaskGroupDetailView: View {
                         TaskRow(task: $task, focusedTaskID: $focusedTaskID, appAccentColor: appAccentColor)
                     }
                     .onDelete(perform: deleteTask)
+                    .onMove(perform: moveTask)
                 } header: {
-                    Text("Tasks")
+                    Text(String(localized: "Tasks"))
                         .font(.headline)
                         .foregroundStyle(appAccentColor)
                 }
             }
             .listStyle(.insetGrouped)
-            .overlay {
-                if group.tasks.isEmpty {
-                    ContentUnavailableView(
-                        "No Tasks Yet",
-                        systemImage: "list.bullet.clipboard",
-                        description: Text("Tap the '+' button to add your first task.")
-                    )
-                    .foregroundStyle(.secondary)
-                }
-            }
             .navigationTitle(group.title)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing ) {
-                    Button {
-                        addNewTask()
-                    } label: {
+                ToolbarItem(placement: .navigationBarTrailing) { EditButton() }
+                ToolbarItem(placement: .primaryAction) {
+                    Button { addNewTask() } label: {
                         Image(systemName: "plus")
                             .font(.headline.weight(.bold))
                             .foregroundStyle(appAccentColor)
@@ -87,15 +70,26 @@ struct TaskGroupDetailView: View {
                             .background(appAccentColor.opacity(0.15))
                             .clipShape(Circle())
                     }
+                    .keyboardShortcut("n", modifiers: [.command])
+                    .accessibilityLabel(Text(String(localized: "Add Task")))
+                }
+            }
+            .overlay {
+                if group.tasks.isEmpty {
+                    ContentUnavailableView(
+                        String(localized: "No Tasks Yet"),
+                        systemImage: "list.bullet.clipboard",
+                        description: Text(String(localized: "Tap the '+' button to add your first task."))
+                    )
+                    .foregroundStyle(.secondary)
                 }
             }
         }
     }
-    
-    private func deleteTask(at offsets: IndexSet) {
-        group.tasks.remove(atOffsets: offsets)
-    }
-    
+
+    private func deleteTask(at offsets: IndexSet) { group.tasks.remove(atOffsets: offsets) }
+    private func moveTask(from src: IndexSet, to dst: Int) { group.tasks.move(fromOffsets: src, toOffset: dst) }
+
     private func addNewTask() {
         withAnimation {
             let newTask = TaskItem(title: "", isCompleted: false)
@@ -109,28 +103,26 @@ struct TaskRow: View {
     @Binding var task: TaskItem
     var focusedTaskID: FocusState<UUID?>.Binding
     var appAccentColor: Color
-    
+
     var body: some View {
         HStack(spacing: 12) {
             Button {
-                withAnimation(.snappy) {
-                    task.isCompleted.toggle()
-                }
+                withAnimation(.snappy) { task.isCompleted.toggle() }
             } label: {
                 Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
                     .font(.title2)
                     .foregroundStyle(task.isCompleted ? appAccentColor : .secondary)
             }
             .buttonStyle(.plain)
-            
-            TextField("New Task", text: $task.title)
+            .accessibilityLabel(Text(task.isCompleted
+                                     ? String(localized: "Mark incomplete")
+                                     : String(localized: "Mark complete")))
+
+            TextField(String(localized: "New Task"), text: $task.title)
                 .strikethrough(task.isCompleted, color: .secondary)
                 .foregroundStyle(task.isCompleted ? .secondary : .primary)
                 .focused(focusedTaskID, equals: task.id)
-                .onSubmit {
-
-                    focusedTaskID.wrappedValue = nil
-                }
+                .onSubmit { focusedTaskID.wrappedValue = nil }
         }
         .padding(.vertical, 8)
     }
