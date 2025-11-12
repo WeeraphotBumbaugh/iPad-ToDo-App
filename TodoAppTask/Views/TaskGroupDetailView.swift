@@ -47,7 +47,9 @@ struct TaskGroupDetailView: View {
 
                 Section {
                     ForEach($group.tasks) { $task in
-                        TaskRow(task: $task, focusedTaskID: $focusedTaskID, appAccentColor: appAccentColor)
+                        TaskRow(task: $task,
+                                focusedTaskID: $focusedTaskID,
+                                appAccentColor: appAccentColor)
                     }
                     .onDelete(perform: deleteTask)
                     .onMove(perform: moveTask)
@@ -104,6 +106,8 @@ struct TaskRow: View {
     var focusedTaskID: FocusState<UUID?>.Binding
     var appAccentColor: Color
 
+    @State private var showDrawing = false
+
     var body: some View {
         HStack(spacing: 12) {
             Button {
@@ -118,12 +122,59 @@ struct TaskRow: View {
                                      ? String(localized: "Mark incomplete")
                                      : String(localized: "Mark complete")))
 
-            TextField(String(localized: "New Task"), text: $task.title)
-                .strikethrough(task.isCompleted, color: .secondary)
-                .foregroundStyle(task.isCompleted ? .secondary : .primary)
-                .focused(focusedTaskID, equals: task.id)
-                .onSubmit { focusedTaskID.wrappedValue = nil }
+            VStack(alignment: .leading, spacing: 6) {
+                TextField(String(localized: "New Task"), text: $task.title)
+                    .strikethrough(task.isCompleted, color: .secondary)
+                    .foregroundStyle(task.isCompleted ? .secondary : .primary)
+                    .focused(focusedTaskID, equals: task.id)
+                    .onSubmit { focusedTaskID.wrappedValue = nil }
+
+                if let thumb = task.drawingThumbnail {
+                    HStack {
+                        thumb
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 48)
+                            .clipped()
+                            .overlay(RoundedRectangle(cornerRadius: 6).stroke(.secondary.opacity(0.3), lineWidth: 1))
+                            .accessibilityLabel(Text(String(localized: "Drawing preview")))
+                        Spacer()
+                        Button {
+                            showDrawing = true
+                        } label: {
+                            Label(String(localized: "Edit Drawing"), systemImage: "pencil.and.outline")
+                        }
+                        .buttonStyle(.borderless)
+                        .keyboardShortcut("d", modifiers: [.command])
+                    }
+                }
+            }
+
+            Spacer()
+
+            Button { showDrawing = true } label: {
+                Image(systemName: task.hasDrawing ? "pencil.tip.crop.circle.badge.plus" : "pencil.tip.crop.circle")
+                    .font(.title3)
+            }
+            .help(task.hasDrawing ? String(localized: "Edit drawing") : String(localized: "Add drawing"))
         }
         .padding(.vertical, 8)
+        .contextMenu {
+            Button { showDrawing = true } label: {
+                Label(task.hasDrawing ? String(localized: "Edit Drawing") : String(localized: "Add Drawing"),
+                      systemImage: "pencil.tip")
+            }
+            if task.hasDrawing {
+                Button(role: .destructive) { task.drawingData = nil } label: {
+                    Label(String(localized: "Remove Drawing"), systemImage: "trash")
+                }
+            }
+        }
+        .sheet(isPresented: $showDrawing) {
+            DrawingSheet(
+                initialData: task.drawingData,
+                onSave: { data in task.drawingData = data }
+            )
+        }
     }
 }

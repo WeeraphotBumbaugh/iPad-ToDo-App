@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%lld of %lld completed" : {
       "localizations" : {
         "en" : {
@@ -8,142 +11,527 @@
             "state" : "new",
             "value" : "%1$lld of %2$lld completed"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld de %2$lld completados"
+          }
         }
       }
     },
     "Account" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta"
+          }
+        }
+      }
+    },
+    "Add drawing" : {
+
+    },
+    "Add Drawing" : {
 
     },
     "Add New Group" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir nuevo grupo"
+          }
+        }
+      }
     },
     "Add Task" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir tarea"
+          }
+        }
+      }
     },
     "Appearance" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apariencia"
+          }
+        }
+      }
     },
     "Attach To" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adjuntar a"
+          }
+        }
+      }
     },
     "Auto" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automático"
+          }
+        }
+      }
+    },
+    "Cancel" : {
 
     },
     "Completion Progress" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progreso de finalización"
+          }
+        }
+      }
+    },
+    "Created At" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creado el"
+          }
+        }
+      }
     },
     "Dark Mode" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo oscuro"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        }
+      }
     },
     "Done" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        }
+      }
+    },
+    "Drawing Pad" : {
+
+    },
+    "Drawing preview" : {
+
+    },
+    "Edit drawing" : {
+
+    },
+    "Edit Drawing" : {
+
+    },
+    "Eraser" : {
 
     },
     "Existing Parent" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padre existente"
+          }
+        }
+      }
+    },
+    "External shows summary" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La pantalla externa muestra el resumen"
+          }
+        }
+      }
     },
     "Group Deleted" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grupo eliminado"
+          }
+        }
+      }
     },
     "Group Name (e.g., Work)" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del grupo (p. ej., Trabajo)"
+          }
+        }
+      }
     },
-    "Localizations (English)" : {
-      "comment" : "\"My Tasks\" = \"My Tasks\";\n\"Account\" = \"Account\";\n\"My TODO Tracker\" = \"My TODO Tracker\";\n\"Toggle Sidebar\" = \"Toggle Sidebar\";\n\"Manage Groups\" = \"Manage Groups\";\n\"Delete\" = \"Delete\";\n\"Welcome\" = \"Welcome\";\n\"Select a group from the sidebar to get started\" = \"Select a group from the sidebar to get started\";\n\"Group Deleted\" = \"Group Deleted\";\n\"The selected group no longer exists. Please select another one.\" = \"The selected group no longer exists. Please select another one.\";\n\"Completion Progress\" = \"Completion Progress\";\n\"No tasks yet.\" = \"No tasks yet.\";\n\"Tasks\" = \"Tasks\";\n\"No Tasks Yet\" = \"No Tasks Yet\";\n\"Tap the '+' button to add your first task.\" = \"Tap the '+' button to add your first task.\";\n\"Add Task\" = \"Add Task\";\n\"New Task\" = \"New Task\";\n\"Profile\" = \"Profile\";\n\"Name\" = \"Name\";\n\"Appearance\" = \"Appearance\";\n\"Dark Mode\" = \"Dark Mode\";\n\"Preferences\" = \"Preferences\";\n\"Notifications\" = \"Notifications\";\n\"Settings\" = \"Settings\";\n\"Sign Out\" = \"Sign Out\";\n\"Attach To\" = \"Attach To\";\n\"Add New Group\" = \"Add New Group\";\n\"Group Name (e.g., Work)\" = \"Group Name (e.g., Work)\";\n\"Mode\" = \"Mode\";\n\"Auto\" = \"Auto\";\n\"Existing Parent\" = \"Existing Parent\";\n\"New Parent\" = \"New Parent\";\n\"Parent\" = \"Parent\";\n\"Parent Title (e.g., My Groups)\" = \"Parent Title (e.g., My Groups)\";\n\"Parent Symbol (SF Symbol, e.g., folder)\" = \"Parent Symbol (SF Symbol, e.g., folder)\";\n\"No parents yet. Choose New Parent or Auto.\" = \"No parents yet. Choose New Parent or Auto.\";\n\"Will attach to the first parent, or create a default one.\" = \"Will attach to the first parent, or create a default one.\";\n\"My Groups\" = \"My Groups\";\n\"Done\" = \"Done\";\n",
-      "extractionState" : "manual"
+    "HDMI / AirPlay supported" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible con HDMI / AirPlay"
+          }
+        }
+      }
     },
-    "Localizations (Spanish)" : {
-      "comment" : "\"My Tasks\" = \"Mis tareas\";\n\"Account\" = \"Cuenta\";\n\"My TODO Tracker\" = \"Mi gestor de tareas\";\n\"Toggle Sidebar\" = \"Mostrar/ocultar barra lateral\";\n\"Manage Groups\" = \"Administrar grupos\";\n\"Delete\" = \"Eliminar\";\n\"Welcome\" = \"Bienvenido\";\n\"Select a group from the sidebar to get started\" = \"Selecciona un grupo en la barra lateral para empezar\";\n\"Group Deleted\" = \"Grupo eliminado\";\n\"The selected group no longer exists. Please select another one.\" = \"El grupo seleccionado ya no existe. Selecciona otro.\";\n\"Completion Progress\" = \"Progreso de finalización\";\n\"No tasks yet.\" = \"Aún no hay tareas.\";\n\"Tasks\" = \"Tareas\";\n\"No Tasks Yet\" = \"Sin tareas\";\n\"Tap the '+' button to add your first task.\" = \"Toca el botón '+' para añadir tu primera tarea.\";\n\"Add Task\" = \"Añadir tarea\";\n\"New Task\" = \"Nueva tarea\";\n\"Profile\" = \"Perfil\";\n\"Name\" = \"Nombre\";\n\"Appearance\" = \"Apariencia\";\n\"Dark Mode\" = \"Modo oscuro\";\n\"Preferences\" = \"Preferencias\";\n\"Notifications\" = \"Notificaciones\";\n\"Settings\" = \"Ajustes\";\n\"Sign Out\" = \"Cerrar sesión\";\n\"Attach To\" = \"Adjuntar a\";\n\"Add New Group\" = \"Añadir nuevo grupo\";\n\"Group Name (e.g., Work)\" = \"Nombre del grupo (p. ej., Trabajo)\";\n\"Mode\" = \"Modo\";\n\"Auto\" = \"Automático\";\n\"Existing Parent\" = \"Padre existente\";\n\"New Parent\" = \"Nuevo padre\";\n\"Parent\" = \"Padre\";\n\"Parent Title (e.g., My Groups)\" = \"Título del padre (p. ej., Mis grupos)\";\n\"Parent Symbol (SF Symbol, e.g., folder)\" = \"Símbolo del padre (SF Symbol, p. ej., folder)\";\n\"No parents yet. Choose New Parent or Auto.\" = \"Aún no hay padres. Elige Nuevo padre o Automático.\";\n\"Will attach to the first parent, or create a default one.\" = \"Se adjuntará al primer padre o se creará uno por defecto.\";\n\"My Groups\" = \"Mis grupos\";\n\"Done\" = \"Listo\";\n",
-      "extractionState" : "manual"
+    "Main iPad shows editor" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El iPad principal muestra el editor"
+          }
+        }
+      }
     },
     "Manage Groups" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Administrar grupos"
+          }
+        }
+      }
     },
     "Mark complete" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como completada"
+          }
+        }
+      }
     },
     "Mark incomplete" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como incompleta"
+          }
+        }
+      }
+    },
+    "Marker" : {
 
     },
     "Mode" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo"
+          }
+        }
+      }
     },
     "My Groups" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis grupos"
+          }
+        }
+      }
     },
     "My Profile" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi perfil"
+          }
+        }
+      }
     },
     "My Tasks" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis tareas"
+          }
+        }
+      }
     },
     "My TODO Tracker" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi gestor de tareas"
+          }
+        }
+      }
     },
     "Name" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre"
+          }
+        }
+      }
     },
     "New Parent" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo padre"
+          }
+        }
+      }
     },
     "New Task" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva tarea"
+          }
+        }
+      }
     },
     "No parents yet. Choose New Parent or Auto." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay padres. Elige Nuevo padre o Automático."
+          }
+        }
+      }
     },
     "No Tasks Yet" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin tareas"
+          }
+        }
+      }
     },
     "No tasks yet." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay tareas."
+          }
+        }
+      }
     },
     "Notifications" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificaciones"
+          }
+        }
+      }
     },
     "Parent" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padre"
+          }
+        }
+      }
     },
     "Parent Symbol (SF Symbol, e.g., folder)" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo del padre (SF Symbol, p. ej., folder)"
+          }
+        }
+      }
     },
     "Parent Title (e.g., My Groups)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título del padre (p. ej., Mis grupos)"
+          }
+        }
+      }
+    },
+    "Pen" : {
+
+    },
+    "Pencil" : {
 
     },
     "Preferences" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferencias"
+          }
+        }
+      }
     },
     "Profile" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfil"
+          }
+        }
+      }
+    },
+    "Remove Drawing" : {
+
+    },
+    "Save" : {
 
     },
     "Select a group from the sidebar to get started" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona un grupo en la barra lateral para empezar"
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        }
+      }
     },
     "Sign Out" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar sesión"
+          }
+        }
+      }
     },
     "Tap the '+' button to add your first task." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca el botón '+' para añadir tu primera tarea."
+          }
+        }
+      }
     },
     "Tasks" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tareas"
+          }
+        }
+      }
     },
     "The selected group no longer exists. Please select another one." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El grupo seleccionado ya no existe. Selecciona otro."
+          }
+        }
+      }
+    },
+    "TodoAppTask — External Display" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TodoAppTask — Pantalla externa"
+          }
+        }
+      }
     },
     "Toggle Sidebar" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar/ocultar barra lateral"
+          }
+        }
+      }
+    },
+    "Tool" : {
 
     },
     "Welcome" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido"
+          }
+        }
+      }
     },
     "Will attach to the first parent, or create a default one." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se adjuntará al primer padre o se creará uno por defecto."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

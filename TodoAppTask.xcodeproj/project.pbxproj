@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E602196B2EC1BBE300716706 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E602196A2EC1BBE300716706 /* Localizable.xcstrings */; };
+		E60219802EC2D04800716706 /* TodoAppTask-InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E602197F2EC2D04800716706 /* TodoAppTask-InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		0E7F808F2EB69AD90058D8F7 /* TodoAppTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoAppTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7F80992EB69AD90058D8F7 /* TodoAppTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoAppTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E602196A2EC1BBE300716706 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E602197F2EC2D04800716706 /* TodoAppTask-InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "TodoAppTask-InfoPlist.xcstrings"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E602196A2EC1BBE300716706 /* Localizable.xcstrings */,
+				E602197F2EC2D04800716706 /* TodoAppTask-InfoPlist.xcstrings */,
 				0E7F80812EB69AD60058D8F7 /* TodoAppTask */,
 				0E7F80922EB69AD90058D8F7 /* TodoAppTaskTests */,
 				0E7F809C2EB69AD90058D8F7 /* TodoAppTaskUITests */,
@@ -198,6 +201,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 0E7F80762EB69AD60058D8F7;
 			minimizedProjectReferenceProxies = 1;
@@ -218,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60219802EC2D04800716706 /* TodoAppTask-InfoPlist.xcstrings in Resources */,
 				E602196B2EC1BBE300716706 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +286,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -345,6 +351,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

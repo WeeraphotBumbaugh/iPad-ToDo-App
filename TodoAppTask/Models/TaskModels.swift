@@ -4,16 +4,22 @@
 //
 
 import Foundation
+import SwiftUI
+import PencilKit
 
 struct TaskItem: Identifiable, Hashable, Codable {
     let id: UUID
     var title: String
     var isCompleted: Bool = false
 
-    init(id: UUID = UUID(), title: String, isCompleted: Bool = false) {
+    // Store native PencilKit data for reliability
+    var drawingData: Data? = nil
+
+    init(id: UUID = UUID(), title: String, isCompleted: Bool = false, drawingData: Data? = nil) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
+        self.drawingData = drawingData
     }
 }
 
@@ -62,4 +68,18 @@ enum ParentChoice: Equatable {
     case existing(MainTaskGroup.ID)               // attach to this parent
     case newParent(title: String, symbol: String) // create this parent and attach
     case auto                                     // attach to first or create default
+}
+
+// MARK: - Drawing helpers for UI
+
+extension TaskItem {
+    var hasDrawing: Bool { drawingData != nil }
+
+    // Render a thumbnail from native PK data
+    var drawingThumbnail: Image? {
+        guard let data = drawingData, let pk = try? PKDrawing(data: data) else { return nil }
+        let bounds = pk.bounds.isEmpty ? CGRect(x: 0, y: 0, width: 240, height: 140) : pk.bounds
+        let ui = pk.image(from: bounds, scale: 2.0)
+        return Image(uiImage: ui)
+    }
 }

@@ -27,6 +27,7 @@ struct ContentView: View {
 
         NavigationSplitView(columnVisibility: $columnVisibility) {
 
+            // SIDEBAR
             List(selection: $selection) {
                 Section {
                     OutlineGroup(nodes, children: \.children) { node in
@@ -36,18 +37,29 @@ struct ContentView: View {
                     Text(String(localized: "My Tasks"))
                         .font(.headline)
                         .foregroundStyle(appAccentColor)
+                        .multilineTitle()
                 }
 
                 Section(String(localized: "Account")) {
                     NavigationLink(value: SidebarSelection.profile) {
-                        Label(profileName, systemImage: "person.crop.circle")
-                            .padding(.vertical, 4)
+                        Label {
+                            Text(profileName).multilineTitle()
+                        } icon: {
+                            Image(systemName: "person.crop.circle")
+                        }
+                        .padding(.vertical, 4)
                     }
                 }
             }
             .listStyle(.sidebar)
             .navigationTitle(String(localized: "My TODO Tracker"))
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(String(localized: "My TODO Tracker"))
+                        .font(.headline)
+                        .multilineTitle()
+                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         withAnimation {
@@ -71,6 +83,7 @@ struct ContentView: View {
             }
 
         } detail: {
+            // DETAIL
             switch selection {
             case .group(let groupID):
                 if let index = taskGroups.firstIndex(where: { $0.id == groupID }) {
@@ -108,6 +121,7 @@ struct ContentView: View {
             }
         }
         .tint(appAccentColor)
+        .dynamicTypeSize(.small ... .accessibility2)
         .onAppear {
             loadTaskGroups()
             loadMainTaskGroups()
@@ -139,12 +153,20 @@ struct ContentView: View {
         let appAccentColor: Color
         var body: some View {
             if let kids = node.children, !kids.isEmpty {
-                Label(node.title, systemImage: node.symbolName)
-                    .padding(.vertical, 4)
+                Label {
+                    Text(node.title).multilineTitle()
+                } icon: {
+                    Image(systemName: node.symbolName)
+                }
+                .padding(.vertical, 4)
             } else {
                 NavigationLink(value: node.selection) {
-                    Label(node.title, systemImage: node.symbolName)
-                        .padding(.vertical, 4)
+                    Label {
+                        Text(node.title).multilineTitle()
+                    } icon: {
+                        Image(systemName: node.symbolName)
+                    }
+                    .padding(.vertical, 4)
                 }
                 .contextMenu {
                     if case .group(let gid) = node.selection {
@@ -267,6 +289,18 @@ struct ProfileView: View {
     var appAccentColor: Color
     @Binding var isDarkMode: Bool
     @Binding var profileName: String
+    
+    // Fixed creation date: Oct 7, 1996 at 12:00 UTC to avoid TZ shift
+    private let createdAt: Date = {
+        var comps = DateComponents()
+        comps.calendar = Calendar(identifier: .gregorian)
+        comps.timeZone = TimeZone(secondsFromGMT: 0)
+        comps.year = 1996
+        comps.month = 10
+        comps.day = 7
+        comps.hour = 12
+        return comps.date ?? Date(timeIntervalSince1970: 845380800) // fallback
+    }()
 
     var body: some View {
         NavigationStack {
@@ -295,6 +329,14 @@ struct ProfileView: View {
                 }
 
                 Section(String(localized: "Account")) {
+                    HStack {
+                        Label(String(localized: "Created At"), systemImage: "calendar")
+                        Spacer()
+                        Text(createdAt, format: .dateTime
+                            .year().month(.abbreviated).day())
+                        .monospacedDigit()
+                        .foregroundStyle(.secondary)
+                    }
                     Label(String(localized: "Sign Out"), systemImage: "arrow.right.to.line.circle.fill")
                         .foregroundStyle(.red)
                 }
@@ -309,4 +351,25 @@ struct ProfileView: View {
 
 private extension Notification.Name {
     static let deleteGroupByID = Notification.Name("deleteGroupByID")
+}
+
+// MARK: - Multiline support
+
+struct MultilineTitle: ViewModifier {
+    var lines: Int = 2
+    var minScale: CGFloat = 0.85
+    func body(content: Content) -> some View {
+        content
+            .lineLimit(lines)
+            .minimumScaleFactor(minScale)
+            .multilineTextAlignment(.leading)
+            .allowsTightening(true)
+            .truncationMode(.tail)
+    }
+}
+
+extension View {
+    func multilineTitle(lines: Int = 2, minScale: CGFloat = 0.85) -> some View {
+        modifier(MultilineTitle(lines: lines, minScale: minScale))
+    }
 }
