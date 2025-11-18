@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "TodoAppTask"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TodoAppTask"
+          }
         }
       }
     }

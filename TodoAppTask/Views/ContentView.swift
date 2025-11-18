@@ -21,6 +21,9 @@ struct ContentView: View {
     private let appAccentColor = Color.cyan
     private let taskGroupsKey = "taskGroupsData"
     private let mainTaskGroupsKey = "mainTaskGroupsData"
+    
+    var storageKey: String
+    var profileTitle: LocalizedStringKey
 
     var body: some View {
         let nodes = buildSidebarNodes()

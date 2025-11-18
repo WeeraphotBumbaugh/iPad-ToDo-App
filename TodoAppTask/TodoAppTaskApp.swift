@@ -11,11 +11,16 @@ struct TodoAppTaskApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
+    // Localization state for runtime switching
+    @StateObject private var localization = LocalizationState()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .preferredColorScheme(isDarkMode ? .dark : .light)
                 .dynamicTypeSize(.small ... .accessibility2)
+                .environment(\.locale, localization.locale)
+                .environmentObject(localization)
         }
         .commands {
             CommandMenu(String(localized: "Tasks")) {

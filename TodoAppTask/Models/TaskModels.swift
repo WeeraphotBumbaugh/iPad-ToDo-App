@@ -6,20 +6,23 @@
 import Foundation
 import SwiftUI
 import PencilKit
+import SwiftUICore
 
 struct TaskItem: Identifiable, Hashable, Codable {
     let id: UUID
     var title: String
     var isCompleted: Bool = false
+    var creationDate: Date
 
     // Store native PencilKit data for reliability
     var drawingData: Data? = nil
 
-    init(id: UUID = UUID(), title: String, isCompleted: Bool = false, drawingData: Data? = nil) {
+    init(id: UUID = UUID(), title: String, isCompleted: Bool = false, drawingData: Data? = nil, creationDate: Date = Date()) {
         self.id = id
         self.title = title
         self.isCompleted = isCompleted
         self.drawingData = drawingData
+        self.creationDate = creationDate
     }
 }
 
@@ -68,6 +71,13 @@ enum ParentChoice: Equatable {
     case existing(MainTaskGroup.ID)               // attach to this parent
     case newParent(title: String, symbol: String) // create this parent and attach
     case auto                                     // attach to first or create default
+}
+
+struct ProfileCategory: Identifiable {
+    let id = UUID()
+    let name: LocalizedStringKey
+    let imageName: String
+    let storageKey: String
 }
 
 // MARK: - Drawing helpers for UI

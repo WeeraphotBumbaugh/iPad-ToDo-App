@@ -17,8 +17,32 @@
             "state" : "translated",
             "value" : "%1$lld de %2$lld completados"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld sur %2$lld terminés"
+          }
         }
       }
+    },
+    "🇨🇦" : {
+
+    },
+    "🇨🇦 Français (Canada)" : {
+
+    },
+    "🇪🇸" : {
+
+    },
+    "🇪🇸 Español" : {
+
+    },
+    "🇺🇸" : {
+
+    },
+    "🇺🇸 English" : {
+
     },
     "Account" : {
       "localizations" : {
@@ -27,14 +51,46 @@
             "state" : "translated",
             "value" : "Cuenta"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compte"
+          }
         }
       }
     },
     "Add drawing" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un dessin"
+          }
+        }
+      }
     },
     "Add Drawing" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un dessin"
+          }
+        }
+      }
     },
     "Add New Group" : {
       "localizations" : {
@@ -42,6 +98,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadir nuevo grupo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un nouveau groupe"
           }
         }
       }
@@ -53,6 +115,12 @@
             "state" : "translated",
             "value" : "Añadir tarea"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une tâche"
+          }
         }
       }
     },
@@ -62,6 +130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apariencia"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
           }
         }
       }
@@ -73,6 +147,12 @@
             "state" : "translated",
             "value" : "Adjuntar a"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Joindre à"
+          }
         }
       }
     },
@@ -83,11 +163,30 @@
             "state" : "translated",
             "value" : "Automático"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto"
+          }
         }
       }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
     },
     "Completion Progress" : {
       "localizations" : {
@@ -95,6 +194,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Progreso de finalización"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progression de l’achèvement"
           }
         }
       }
@@ -107,6 +212,12 @@
             "state" : "translated",
             "value" : "Creado el"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créé le"
+          }
         }
       }
     },
@@ -116,6 +227,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modo oscuro"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode sombre"
           }
         }
       }
@@ -127,6 +244,12 @@
             "state" : "translated",
             "value" : "Eliminar"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
         }
       }
     },
@@ -137,22 +260,99 @@
             "state" : "translated",
             "value" : "Listo"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
+          }
         }
       }
     },
     "Drawing Pad" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloc de dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloc de dessin"
+          }
+        }
+      }
     },
     "Drawing preview" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa del dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu du dessin"
+          }
+        }
+      }
     },
     "Edit drawing" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier le dessin"
+          }
+        }
+      }
     },
     "Edit Drawing" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier le dessin"
+          }
+        }
+      }
+    },
+    "English" : {
 
     },
     "Eraser" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrador"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gomme"
+          }
+        }
+      }
+    },
+    "Español" : {
 
     },
     "Existing Parent" : {
@@ -161,6 +361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padre existente"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parent existant"
           }
         }
       }
@@ -172,8 +378,17 @@
             "state" : "translated",
             "value" : "La pantalla externa muestra el resumen"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’écran externe affiche le résumé"
+          }
         }
       }
+    },
+    "Français (Canada)" : {
+
     },
     "Group Deleted" : {
       "localizations" : {
@@ -181,6 +396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grupo eliminado"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groupe supprimé"
           }
         }
       }
@@ -192,6 +413,12 @@
             "state" : "translated",
             "value" : "Nombre del grupo (p. ej., Trabajo)"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du groupe (p. ex., Travail)"
+          }
         }
       }
     },
@@ -202,8 +429,33 @@
             "state" : "translated",
             "value" : "Compatible con HDMI / AirPlay"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HDMI / AirPlay pris en charge"
+          }
         }
       }
+    },
+    "Home" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accueil"
+          }
+        }
+      }
+    },
+    "Language" : {
+
     },
     "Main iPad shows editor" : {
       "localizations" : {
@@ -211,6 +463,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El iPad principal muestra el editor"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’iPad principal affiche l’éditeur"
           }
         }
       }
@@ -222,6 +480,12 @@
             "state" : "translated",
             "value" : "Administrar grupos"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gérer les groupes"
+          }
         }
       }
     },
@@ -231,6 +495,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Marcar como completada"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marquer comme terminée"
           }
         }
       }
@@ -242,11 +512,30 @@
             "state" : "translated",
             "value" : "Marcar como incompleta"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marquer comme non terminée"
+          }
         }
       }
     },
     "Marker" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotulador"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marqueur"
+          }
+        }
+      }
     },
     "Mode" : {
       "localizations" : {
@@ -254,6 +543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode"
           }
         }
       }
@@ -265,6 +560,12 @@
             "state" : "translated",
             "value" : "Mis grupos"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes groupes"
+          }
         }
       }
     },
@@ -274,6 +575,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mi perfil"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mon profil"
           }
         }
       }
@@ -285,6 +592,12 @@
             "state" : "translated",
             "value" : "Mis tareas"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes tâches"
+          }
         }
       }
     },
@@ -294,6 +607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mi gestor de tareas"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mon gestionnaire de tâches"
           }
         }
       }
@@ -305,6 +624,12 @@
             "state" : "translated",
             "value" : "Nombre"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom"
+          }
         }
       }
     },
@@ -314,6 +639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuevo padre"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau parent"
           }
         }
       }
@@ -325,6 +656,12 @@
             "state" : "translated",
             "value" : "Nueva tarea"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle tâche"
+          }
         }
       }
     },
@@ -334,6 +671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay padres. Elige Nuevo padre o Automático."
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun parent pour le moment. Choisissez Nouveau parent ou Auto."
           }
         }
       }
@@ -345,6 +688,12 @@
             "state" : "translated",
             "value" : "Sin tareas"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune tâche pour le moment"
+          }
         }
       }
     },
@@ -354,6 +703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay tareas."
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune tâche pour le moment."
           }
         }
       }
@@ -365,6 +720,12 @@
             "state" : "translated",
             "value" : "Notificaciones"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifications"
+          }
         }
       }
     },
@@ -374,6 +735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padre"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parent"
           }
         }
       }
@@ -385,6 +752,12 @@
             "state" : "translated",
             "value" : "Símbolo del padre (SF Symbol, p. ej., folder)"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbole du parent (SF Symbol, p. ex., dossier)"
+          }
         }
       }
     },
@@ -395,14 +768,62 @@
             "state" : "translated",
             "value" : "Título del padre (p. ej., Mis grupos)"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre du parent (p. ex., Mes groupes)"
+          }
         }
       }
     },
     "Pen" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolígrafo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stylo"
+          }
+        }
+      }
     },
     "Pencil" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lápiz"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crayon"
+          }
+        }
+      }
+    },
+    "Personal" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personal"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnel"
+          }
+        }
+      }
     },
     "Preferences" : {
       "localizations" : {
@@ -410,6 +831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preferencias"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préférences"
           }
         }
       }
@@ -421,14 +848,62 @@
             "state" : "translated",
             "value" : "Perfil"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
         }
       }
     },
     "Remove Drawing" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar dibujo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le dessin"
+          }
+        }
+      }
     },
     "Save" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
+          }
+        }
+      }
+    },
+    "School" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escuela"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "École"
+          }
+        }
+      }
     },
     "Select a group from the sidebar to get started" : {
       "localizations" : {
@@ -436,6 +911,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecciona un grupo en la barra lateral para empezar"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez un groupe dans la barre latérale pour commencer"
+          }
+        }
+      }
+    },
+    "Select a workspace to begin" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccione un espacio de trabajo para comenzar"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez un espace de travail pour commencer"
           }
         }
       }
@@ -447,6 +944,12 @@
             "state" : "translated",
             "value" : "Ajustes"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
         }
       }
     },
@@ -456,6 +959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cerrar sesión"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se déconnecter"
           }
         }
       }
@@ -467,6 +976,12 @@
             "state" : "translated",
             "value" : "Toca el botón '+' para añadir tu primera tarea."
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez le bouton « + » pour ajouter votre première tâche."
+          }
         }
       }
     },
@@ -476,6 +991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tareas"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tâches"
           }
         }
       }
@@ -487,6 +1008,12 @@
             "state" : "translated",
             "value" : "El grupo seleccionado ya no existe. Selecciona otro."
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le groupe sélectionné n’existe plus. Veuillez en sélectionner un autre."
+          }
         }
       }
     },
@@ -496,6 +1023,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TodoAppTask — Pantalla externa"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TodoAppTask — Affichage externe"
           }
         }
       }
@@ -507,11 +1040,30 @@
             "state" : "translated",
             "value" : "Mostrar/ocultar barra lateral"
           }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher/masquer la barre latérale"
+          }
         }
       }
     },
     "Tool" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herramienta"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outil"
+          }
+        }
+      }
     },
     "Welcome" : {
       "localizations" : {
@@ -519,6 +1071,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenido"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue"
+          }
+        }
+      }
+    },
+    "Welcome Back" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido de nuevo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bon retour"
           }
         }
       }
@@ -529,6 +1103,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se adjuntará al primer padre o se creará uno por defecto."
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S’attachera au premier parent ou en créera un par défaut."
+          }
+        }
+      }
+    },
+    "Work" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Travail"
           }
         }
       }
