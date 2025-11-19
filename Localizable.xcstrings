@@ -6,6 +6,12 @@
     },
     "%lld of %lld completed" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld من %2$lld مكتملة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -26,26 +32,83 @@
         }
       }
     },
-    "🇨🇦" : {
-
-    },
     "🇨🇦 Français (Canada)" : {
-
-    },
-    "🇪🇸" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇨🇦 الفرنسية (كندا)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇨🇦 Francés (Canadá)"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇨🇦 Français (Canada)"
+          }
+        }
+      }
     },
     "🇪🇸 Español" : {
-
-    },
-    "🇺🇸" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇪🇸 الإسبانية"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇪🇸 Español"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇪🇸 Espagnol"
+          }
+        }
+      }
     },
     "🇺🇸 English" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇺🇸 الإنجليزية"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇺🇸 Inglés"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🇺🇸 Anglais"
+          }
+        }
+      }
     },
     "Account" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحساب"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62,6 +125,12 @@
     },
     "Add drawing" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة رسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -78,6 +147,12 @@
     },
     "Add Drawing" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة رسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -94,6 +169,12 @@
     },
     "Add New Group" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة مجموعة جديدة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -110,6 +191,12 @@
     },
     "Add Task" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إضافة مهمة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -126,6 +213,12 @@
     },
     "Appearance" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المظهر"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -142,6 +235,12 @@
     },
     "Attach To" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إرفاق بـ"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -158,6 +257,12 @@
     },
     "Auto" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تلقائي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -174,6 +279,12 @@
     },
     "Cancel" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إلغاء"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -190,6 +301,12 @@
     },
     "Completion Progress" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مدى التقدم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -207,6 +324,12 @@
     "Created At" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ الإنشاء"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -221,8 +344,26 @@
         }
       }
     },
+    "Current: English" : {
+
+    },
+    "Current: Español" : {
+
+    },
+    "Current: Français (Canada)" : {
+
+    },
+    "Current: العربية" : {
+
+    },
     "Dark Mode" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوضع الداكن"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -239,6 +380,12 @@
     },
     "Delete" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حذف"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -255,6 +402,12 @@
     },
     "Done" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -271,6 +424,12 @@
     },
     "Drawing Pad" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دفتر الرسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -287,6 +446,12 @@
     },
     "Drawing preview" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معاينة الرسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -303,6 +468,12 @@
     },
     "Edit drawing" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعديل الرسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -319,6 +490,12 @@
     },
     "Edit Drawing" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعديل الرسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -333,11 +510,14 @@
         }
       }
     },
-    "English" : {
-
-    },
     "Eraser" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ممحاة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -352,11 +532,14 @@
         }
       }
     },
-    "Español" : {
-
-    },
     "Existing Parent" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصل موجود"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -373,6 +556,12 @@
     },
     "External shows summary" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الشاشة الخارجية تعرض الملخّص"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -387,11 +576,14 @@
         }
       }
     },
-    "Français (Canada)" : {
-
-    },
     "Group Deleted" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم حذف المجموعة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -408,6 +600,12 @@
     },
     "Group Name (e.g., Work)" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسم المجموعة (مثال: العمل)"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -424,6 +622,12 @@
     },
     "HDMI / AirPlay supported" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يدعم HDMI / AirPlay"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -440,6 +644,12 @@
     },
     "Home" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرئيسية"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -455,10 +665,35 @@
       }
     },
     "Language" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اللغة"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langue"
+          }
+        }
+      }
     },
     "Main iPad shows editor" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرض iPad الرئيسي محرّر المهام"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -475,6 +710,12 @@
     },
     "Manage Groups" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إدارة المجموعات"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -491,6 +732,12 @@
     },
     "Mark complete" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وضع علامة كمكتملة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -507,6 +754,12 @@
     },
     "Mark incomplete" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وضع علامة كغير مكتملة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -523,6 +776,12 @@
     },
     "Marker" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قلم تمييز"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -539,6 +798,12 @@
     },
     "Mode" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوضع"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -554,7 +819,14 @@
       }
     },
     "My Groups" : {
+      "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مجموعاتي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -571,6 +843,12 @@
     },
     "My Profile" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملفي الشخصي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -587,6 +865,12 @@
     },
     "My Tasks" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مهامي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -603,6 +887,12 @@
     },
     "My TODO Tracker" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متعقّب المهام الخاص بي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -619,6 +909,12 @@
     },
     "Name" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -635,6 +931,12 @@
     },
     "New Parent" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصل جديد"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -651,6 +953,12 @@
     },
     "New Task" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مهمة جديدة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -667,6 +975,12 @@
     },
     "No parents yet. Choose New Parent or Auto." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد أصل بعد. اختر أصلًا جديدًا أو تلقائيًا."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -683,6 +997,12 @@
     },
     "No Tasks Yet" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا توجد مهام بعد"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -699,6 +1019,12 @@
     },
     "No tasks yet." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا توجد مهام بعد."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -715,6 +1041,12 @@
     },
     "Notifications" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإشعارات"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -731,6 +1063,12 @@
     },
     "Parent" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأصل"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -747,6 +1085,12 @@
     },
     "Parent Symbol (SF Symbol, e.g., folder)" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رمز الأصل (رمز SF، مثل folder)"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -763,6 +1107,12 @@
     },
     "Parent Title (e.g., My Groups)" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنوان الأصل (مثال: مجموعاتي)"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -779,6 +1129,12 @@
     },
     "Pen" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قلم حبر"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -795,6 +1151,12 @@
     },
     "Pencil" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قلم رصاص"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -811,6 +1173,12 @@
     },
     "Personal" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شخصي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -827,6 +1195,12 @@
     },
     "Preferences" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التفضيلات"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -843,6 +1217,12 @@
     },
     "Profile" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الملف الشخصي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -859,6 +1239,12 @@
     },
     "Remove Drawing" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إزالة الرسم"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -875,6 +1261,12 @@
     },
     "Save" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حفظ"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -891,6 +1283,12 @@
     },
     "School" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المدرسة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -907,6 +1305,12 @@
     },
     "Select a group from the sidebar to get started" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر مجموعة من الشريط الجانبي للبدء"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -923,6 +1327,12 @@
     },
     "Select a workspace to begin" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر مساحة عمل للبدء"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -939,6 +1349,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإعدادات"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -955,6 +1371,12 @@
     },
     "Sign Out" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسجيل الخروج"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -971,6 +1393,12 @@
     },
     "Tap the '+' button to add your first task." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط على زر '+' لإضافة أول مهمة لك."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -987,6 +1415,12 @@
     },
     "Tasks" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المهام"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1003,6 +1437,12 @@
     },
     "The selected group no longer exists. Please select another one." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المجموعة المحددة لم تعد موجودة. يرجى اختيار مجموعة أخرى."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1019,6 +1459,12 @@
     },
     "TodoAppTask — External Display" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TodoAppTask — شاشة خارجية"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1035,6 +1481,12 @@
     },
     "Toggle Sidebar" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إظهار/إخفاء الشريط الجانبي"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1051,6 +1503,12 @@
     },
     "Tool" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أداة"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1067,6 +1525,12 @@
     },
     "Welcome" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبًا"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1083,6 +1547,12 @@
     },
     "Welcome Back" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبًا بعودتك"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1099,6 +1569,12 @@
     },
     "Will attach to the first parent, or create a default one." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سيتم الإرفاق بالأصل الأول أو إنشاء أصل افتراضي."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1115,6 +1591,12 @@
     },
     "Work" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "العمل"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",

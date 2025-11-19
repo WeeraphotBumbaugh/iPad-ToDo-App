@@ -203,6 +203,7 @@
 				Base,
 				es,
 				"fr-CA",
+				ar,
 			);
 			mainGroup = 0E7F80762EB69AD60058D8F7;
 			minimizedProjectReferenceProxies = 1;

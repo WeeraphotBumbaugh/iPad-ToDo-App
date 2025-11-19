@@ -4,6 +4,7 @@
 //
 //  Created by Weeraphot Bumbaugh on 11/12/25.
 //
+
 import SwiftUI
 
 struct HomeView: View {
@@ -27,11 +28,11 @@ struct HomeView: View {
                 VStack(spacing: 40) {
                     welcomeHeader
                     profileGrid
-                    languageMenu // dropdown at the base
+                    languageSection
                 }
                 .padding(.bottom, 24)
             }
-            .navigationTitle("Home")
+            .navigationTitle(String(localized: "Home"))
             .navigationBarHidden(true)
         }
     }
@@ -42,10 +43,10 @@ struct HomeView: View {
                 .font(.system(size: 80))
                 .foregroundStyle(.cyan)
 
-            Text("Welcome Back")
+            Text(String(localized: "Welcome Back"))
                 .font(.largeTitle.bold())
 
-            Text("Select a workspace to begin")
+            Text(String(localized: "Select a workspace to begin"))
                 .font(.title3)
                 .foregroundStyle(.secondary)
         }
@@ -55,7 +56,12 @@ struct HomeView: View {
     private var profileGrid: some View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach(profiles) { profile in
-                NavigationLink(destination: ContentView(storageKey: profile.storageKey, profileTitle: profile.name)) {
+                NavigationLink(
+                    destination: ContentView(
+                        storageKey: profile.storageKey,
+                        profileTitle: profile.name
+                    )
+                ) {
                     ProfileCard(profile: profile)
                 }
                 .buttonStyle(.plain)
@@ -64,51 +70,12 @@ struct HomeView: View {
         .padding(.horizontal, 80)
     }
 
-    // Language dropdown with flags and text
-    private var languageMenu: some View {
+    // Language selector + "current language" label
+    private var languageSection: some View {
         VStack(spacing: 12) {
-            Menu {
-                Button {
-                    loc.code = "en"
-                } label: {
-                    HStack {
-                        Text("🇺🇸")
-                        Text("English")
-                        if loc.code == "en" { Spacer(); Image(systemName: "checkmark") }
-                    }
-                }
+            LanguagePicker()
 
-                Button {
-                    loc.code = "fr-CA"
-                } label: {
-                    HStack {
-                        Text("🇨🇦")
-                        Text("Français (Canada)")
-                        if loc.code == "fr-CA" { Spacer(); Image(systemName: "checkmark") }
-                    }
-                }
-
-                Button {
-                    loc.code = "es"
-                } label: {
-                    HStack {
-                        Text("🇪🇸")
-                        Text("Español")
-                        if loc.code == "es" { Spacer(); Image(systemName: "checkmark") }
-                    }
-                }
-            } label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "globe")
-                    Text("Language")
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 10)
-                .background(.ultraThinMaterial)
-                .clipShape(Capsule())
-            }
-
-            Text(currentLanguageLabel(code: loc.code))
+            Text(verbatim: currentLanguageLabel(code: loc.code))
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
@@ -117,10 +84,16 @@ struct HomeView: View {
 
     private func currentLanguageLabel(code: String) -> String {
         switch code {
-        case "en": return "Current: English"
-        case "fr-CA": return "Current: Français (Canada)"
-        case "es": return "Current: Español"
-        default: return "Current: English"
+        case "en":
+            return String(localized: "Current: English")
+        case "fr-CA":
+            return String(localized: "Current: Français (Canada)")
+        case "es":
+            return String(localized: "Current: Español")
+        case "ar":
+            return String(localized: "Current: العربية")
+        default:
+            return String(localized: "Current: English")
         }
     }
 }

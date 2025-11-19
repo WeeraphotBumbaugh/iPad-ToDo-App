@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
@@ -37,13 +38,13 @@ struct ContentView: View {
                         Row(node: node, appAccentColor: appAccentColor)
                     }
                 } header: {
-                    Text(String(localized: "My Tasks"))
+                    Text("My Tasks")
                         .font(.headline)
                         .foregroundStyle(appAccentColor)
                         .multilineTitle()
                 }
 
-                Section(String(localized: "Account")) {
+                Section("Account") {
                     NavigationLink(value: SidebarSelection.profile) {
                         Label {
                             Text(profileName).multilineTitle()
@@ -55,11 +56,11 @@ struct ContentView: View {
                 }
             }
             .listStyle(.sidebar)
-            .navigationTitle(String(localized: "My TODO Tracker"))
+            .navigationTitle("My TODO Tracker")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text(String(localized: "My TODO Tracker"))
+                    Text("My TODO Tracker")
                         .font(.headline)
                         .multilineTitle()
                 }
@@ -70,7 +71,7 @@ struct ContentView: View {
                         }
                     } label: { Image(systemName: "sidebar.leading") }
                     .keyboardShortcut("s", modifiers: [.command, .shift])
-                    .help(String(localized: "Toggle Sidebar"))
+                    .help("Toggle Sidebar")
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button { isManagingGroups = true } label: {
@@ -81,7 +82,7 @@ struct ContentView: View {
                             .background(appAccentColor.opacity(0.15))
                             .clipShape(Circle())
                     }
-                    .help(String(localized: "Manage Groups"))
+                    .help("Manage Groups")
                 }
             }
 
@@ -93,9 +94,9 @@ struct ContentView: View {
                     TaskGroupDetailView(group: $taskGroups[index], appAccentColor: appAccentColor)
                 } else {
                     ContentUnavailableView(
-                        String(localized: "Group Deleted"),
+                        "Group Deleted",
                         systemImage: "nosign",
-                        description: Text(String(localized: "The selected group no longer exists. Please select another one."))
+                        description: Text("The selected group no longer exists. Please select another one.")
                     )
                     .foregroundStyle(.secondary)
                 }
@@ -107,9 +108,9 @@ struct ContentView: View {
 
             case nil:
                 ContentUnavailableView(
-                    String(localized: "Welcome"),
+                    "Welcome",
                     systemImage:"checklist.unchecked",
-                    description: Text(String(localized: "Select a group from the sidebar to get started"))
+                    description: Text("Select a group from the sidebar to get started")
                 )
                 .foregroundStyle(.secondary)
             }
@@ -173,7 +174,7 @@ struct ContentView: View {
                 }
                 .contextMenu {
                     if case .group(let gid) = node.selection {
-                        Button(String(localized: "Delete"), role: .destructive) {
+                        Button("Delete", role: .destructive) {
                             NotificationCenter.default.post(name: .deleteGroupByID, object: gid)
                         }
                     }
@@ -271,7 +272,7 @@ struct ContentView: View {
             mainTaskGroups.append(newMain)
         case .auto:
             if mainTaskGroups.isEmpty {
-                let defaultMain = MainTaskGroup(title: String(localized: "My Groups"),
+                let defaultMain = MainTaskGroup(title: "My Groups",
                                                 symbolName: "folder",
                                                 taskGroupIDs: [newGroup.id])
                 mainTaskGroups.append(defaultMain)
@@ -302,49 +303,49 @@ struct ProfileView: View {
         comps.month = 10
         comps.day = 7
         comps.hour = 12
-        return comps.date ?? Date(timeIntervalSince1970: 845380800) // fallback
+        return comps.date ?? Date(timeIntervalSince1970: 845380800)
     }()
 
     var body: some View {
         NavigationStack {
             Form {
-                Section(String(localized: "Profile")) {
+                Section("Profile") {
                     HStack {
                         Image(systemName: "person.crop.circle")
                             .font(.system(size: 48))
                             .foregroundStyle(appAccentColor)
-                        TextField(String(localized: "Name"), text: $profileName)
+                        TextField("Name", text: $profileName)
                             .textInputAutocapitalization(.words)
                     }
                 }
 
-                Section(String(localized: "Appearance")) {
+                Section("Appearance") {
                     Toggle(isOn: $isDarkMode) {
-                        Label(String(localized: "Dark Mode"),
+                        Label("Dark Mode",
                               systemImage: isDarkMode ? "moon.fill" : "sun.max.fill")
                     }
                     .tint(appAccentColor)
                 }
 
-                Section(String(localized: "Preferences")) {
-                    Label(String(localized: "Notifications"), systemImage: "bell.badge.fill")
-                    Label(String(localized: "Settings"), systemImage: "gear")
+                Section("Preferences") {
+                    Label("Notifications", systemImage: "bell.badge.fill")
+                    Label("Settings", systemImage: "gear")
                 }
 
-                Section(String(localized: "Account")) {
+                Section("Account") {
                     HStack {
-                        Label(String(localized: "Created At"), systemImage: "calendar")
+                        Label("Created At", systemImage: "calendar")
                         Spacer()
                         Text(createdAt, format: .dateTime
                             .year().month(.abbreviated).day())
                         .monospacedDigit()
                         .foregroundStyle(.secondary)
                     }
-                    Label(String(localized: "Sign Out"), systemImage: "arrow.right.to.line.circle.fill")
+                    Label("Sign Out", systemImage: "arrow.right.to.line.circle.fill")
                         .foregroundStyle(.red)
                 }
             }
-            .navigationTitle(String(localized: "My Profile"))
+            .navigationTitle("My Profile")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

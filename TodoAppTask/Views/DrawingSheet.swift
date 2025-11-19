@@ -12,6 +12,8 @@ struct DrawingSheet: View {
     let onSave: (Data?) -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.layoutDirection) private var layoutDirection
+
     @StateObject private var tools = ToolState()
     @State private var canvas = PKCanvasView()
     @State private var toolPicker = PKToolPicker()
@@ -31,15 +33,33 @@ struct DrawingSheet: View {
             .navigationTitle(String(localized: "Drawing Pad"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) { dismiss() }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Save")) {
-                        onSave(canvas.drawing.dataRepresentation())
-                        dismiss()
+                if layoutDirection == .leftToRight {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(String(localized: "Cancel")) {
+                            dismiss()
+                        }
                     }
-                    .keyboardShortcut(.return, modifiers: [.command])
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(String(localized: "Save")) {
+                            onSave(canvas.drawing.dataRepresentation())
+                            dismiss()
+                        }
+                        .keyboardShortcut(.return, modifiers: [.command])
+                    }
+                } else {
+                    // For RTL, reverse the button order to match regional conventions
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(String(localized: "Save")) {
+                            onSave(canvas.drawing.dataRepresentation())
+                            dismiss()
+                        }
+                        .keyboardShortcut(.return, modifiers: [.command])
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(String(localized: "Cancel")) {
+                            dismiss()
+                        }
+                    }
                 }
             }
             .onAppear {
