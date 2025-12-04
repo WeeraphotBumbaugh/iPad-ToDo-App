@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List Xcode Schemes
-        run: xcodebuild -list -project "StudentsToDo/StudentsToDo.xcodeproj"
+        run: xcodebuild -list -project "iPad-ToDo-App/TodoAppTask.xcodeproj"
 
       - name: Build App
         run: |
