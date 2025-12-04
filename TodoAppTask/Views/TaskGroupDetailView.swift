@@ -71,6 +71,7 @@ struct TaskGroupDetailView: View {
                             .padding(6)
                             .background(appAccentColor.opacity(0.15))
                             .clipShape(Circle())
+                            .accessibilityIdentifier("addTaskButton")
                     }
                     .keyboardShortcut("n", modifiers: [.command])
                     .accessibilityLabel(Text(String(localized: "Add Task")))
@@ -128,6 +129,7 @@ struct TaskRow: View {
                     .foregroundStyle(task.isCompleted ? .secondary : .primary)
                     .focused(focusedTaskID, equals: task.id)
                     .onSubmit { focusedTaskID.wrappedValue = nil }
+                    .accessibilityIdentifier("taskTitleField")
 
                 if let thumb = task.drawingThumbnail {
                     HStack {

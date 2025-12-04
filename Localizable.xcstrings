@@ -819,7 +819,6 @@
       }
     },
     "My Groups" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1523,6 +1522,12 @@
         }
       }
     },
+    "Upgrade for $5.99" : {
+
+    },
+    "Upgrade to Pro" : {
+
+    },
     "Welcome" : {
       "localizations" : {
         "ar" : {
@@ -1610,6 +1615,9 @@
           }
         }
       }
+    },
+    "You’ve reached the free limit for groups or main groups. Upgrade to Pro to unlock unlimited groups." : {
+
     }
   },
   "version" : "1.0"

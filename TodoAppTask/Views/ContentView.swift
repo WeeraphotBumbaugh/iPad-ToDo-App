@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import PencilKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
@@ -22,104 +21,26 @@ struct ContentView: View {
     private let appAccentColor = Color.cyan
     private let taskGroupsKey = "taskGroupsData"
     private let mainTaskGroupsKey = "mainTaskGroupsData"
-    
+
     var storageKey: String
     var profileTitle: LocalizedStringKey
 
+    private var sidebarNodes: [SidebarNode] {
+        buildSidebarNodes()
+    }
+
     var body: some View {
-        let nodes = buildSidebarNodes()
-
         NavigationSplitView(columnVisibility: $columnVisibility) {
-
-            // SIDEBAR
-            List(selection: $selection) {
-                Section {
-                    OutlineGroup(nodes, children: \.children) { node in
-                        Row(node: node, appAccentColor: appAccentColor)
-                    }
-                } header: {
-                    Text("My Tasks")
-                        .font(.headline)
-                        .foregroundStyle(appAccentColor)
-                        .multilineTitle()
-                }
-
-                Section("Account") {
-                    NavigationLink(value: SidebarSelection.profile) {
-                        Label {
-                            Text(profileName).multilineTitle()
-                        } icon: {
-                            Image(systemName: "person.crop.circle")
-                        }
-                        .padding(.vertical, 4)
-                    }
-                }
-            }
-            .listStyle(.sidebar)
-            .navigationTitle("My TODO Tracker")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("My TODO Tracker")
-                        .font(.headline)
-                        .multilineTitle()
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        withAnimation {
-                            columnVisibility = (columnVisibility == .all) ? .detailOnly : .all
-                        }
-                    } label: { Image(systemName: "sidebar.leading") }
-                    .keyboardShortcut("s", modifiers: [.command, .shift])
-                    .help("Toggle Sidebar")
-                }
-                ToolbarItem(placement: .primaryAction) {
-                    Button { isManagingGroups = true } label: {
-                        Image(systemName: "plus")
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(appAccentColor)
-                            .padding(6)
-                            .background(appAccentColor.opacity(0.15))
-                            .clipShape(Circle())
-                    }
-                    .help("Manage Groups")
-                }
-            }
-
+            sidebarView
         } detail: {
-            // DETAIL
-            switch selection {
-            case .group(let groupID):
-                if let index = taskGroups.firstIndex(where: { $0.id == groupID }) {
-                    TaskGroupDetailView(group: $taskGroups[index], appAccentColor: appAccentColor)
-                } else {
-                    ContentUnavailableView(
-                        "Group Deleted",
-                        systemImage: "nosign",
-                        description: Text("The selected group no longer exists. Please select another one.")
-                    )
-                    .foregroundStyle(.secondary)
-                }
-
-            case .profile:
-                ProfileView(appAccentColor: appAccentColor,
-                            isDarkMode: $isDarkMode,
-                            profileName: $profileName)
-
-            case nil:
-                ContentUnavailableView(
-                    "Welcome",
-                    systemImage:"checklist.unchecked",
-                    description: Text("Select a group from the sidebar to get started")
-                )
-                .foregroundStyle(.secondary)
-            }
+            detailView
         }
         .navigationSplitViewStyle(.balanced)
         .sheet(isPresented: $isManagingGroups) {
             ManageGroupsView(
                 appAccentColor: appAccentColor,
-                mains: $mainTaskGroups
+                mains: $mainTaskGroups,
+                currentGroupCount: taskGroups.count
             ) { title, symbol, parent in
                 addTaskGroup(title: title, symbolName: symbol, parent: parent)
             }
@@ -147,7 +68,128 @@ struct ContentView: View {
             }
         }
         .task {
-            if hSizeClass == .compact { columnVisibility = .automatic }
+            if hSizeClass == .compact {
+                columnVisibility = .automatic
+            }
+        }
+    }
+
+    // MARK: - Split views
+
+    // Sidebar extracted to reduce complexity in body
+    private var sidebarView: some View {
+        List(selection: $selection) {
+            Section {
+                OutlineGroup(sidebarNodes, children: \.children) { node in
+                    Row(node: node, appAccentColor: appAccentColor)
+                }
+            } header: {
+                Text(String(localized: "My Tasks"))
+                    .font(.headline)
+                    .foregroundStyle(appAccentColor)
+                    .multilineTitle()
+            }
+
+            Section(String(localized: "Account")) {
+                NavigationLink(value: SidebarSelection.profile) {
+                    Label {
+                        Text(profileName).multilineTitle()
+                    } icon: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                    .padding(.vertical, 4)
+                }
+            }
+        }
+        .listStyle(.sidebar)
+        .navigationTitle(String(localized: "My TODO Tracker"))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            toolbarContent
+        }
+    }
+
+    // Detail extracted so the switch is not inside body directly
+    private var detailView: some View {
+        Group {
+            switch selection {
+            case .group(let groupID):
+                if let index = taskGroups.firstIndex(where: { $0.id == groupID }) {
+                    TaskGroupDetailView(
+                        group: $taskGroups[index],
+                        appAccentColor: appAccentColor
+                    )
+                } else {
+                    ContentUnavailableView(
+                        String(localized: "Group Deleted"),
+                        systemImage: "nosign",
+                        description: Text(
+                            String(localized: "The selected group no longer exists. Please select another one.")
+                        )
+                    )
+                    .foregroundStyle(.secondary)
+                }
+
+            case .profile:
+                ProfileView(
+                    appAccentColor: appAccentColor,
+                    isDarkMode: $isDarkMode,
+                    profileName: $profileName
+                )
+
+            case nil:
+                ContentUnavailableView(
+                    String(localized: "Welcome"),
+                    systemImage: "checklist.unchecked",
+                    description: Text(
+                        String(localized: "Select a group from the sidebar to get started")
+                    )
+                )
+                .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    // MARK: - Toolbar
+
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        // Toggle Sidebar
+        ToolbarItem(placement: .topBarLeading) {
+            let iconName = (columnVisibility == .all) ? "sidebar.leading" : "sidebar.trailing"
+
+            Button {
+                withAnimation {
+                    columnVisibility = (columnVisibility == .all) ? .detailOnly : .all
+                }
+            } label: {
+                Image(systemName: iconName)
+            }
+            .keyboardShortcut("s", modifiers: [.command, .shift])
+            .help(String(localized: "Toggle Sidebar"))
+        }
+
+        // Center title
+        ToolbarItem(placement: .principal) {
+            Text(String(localized: "My TODO Tracker"))
+                .font(.headline)
+                .multilineTitle()
+        }
+
+        // Manage Groups
+        ToolbarItem(placement: .topBarTrailing) {
+            Button {
+                isManagingGroups = true
+            } label: {
+                Image(systemName: "plus")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(appAccentColor)
+                    .padding(6)
+                    .background(appAccentColor.opacity(0.15))
+                    .clipShape(Circle())
+                    .accessibilityIdentifier("addNewGroupButton")
+            }
+            .help(String(localized: "Manage Groups"))
         }
     }
 
@@ -155,15 +197,27 @@ struct ContentView: View {
     private struct Row: View {
         let node: SidebarNode
         let appAccentColor: Color
+
         var body: some View {
             if let kids = node.children, !kids.isEmpty {
+                // MAIN GROUP ROW
                 Label {
                     Text(node.title).multilineTitle()
                 } icon: {
                     Image(systemName: node.symbolName)
                 }
                 .padding(.vertical, 4)
+                .contextMenu {
+                    // Delete main group (parent)
+                    Button(String(localized: "Delete"), role: .destructive) {
+                        NotificationCenter.default.post(
+                            name: .deleteMainByID,
+                            object: node.id
+                        )
+                    }
+                }
             } else {
+                // CHILD GROUP ROW
                 NavigationLink(value: node.selection) {
                     Label {
                         Text(node.title).multilineTitle()
@@ -172,10 +226,14 @@ struct ContentView: View {
                     }
                     .padding(.vertical, 4)
                 }
+                .accessibilityIdentifier("\(node.title)")
                 .contextMenu {
                     if case .group(let gid) = node.selection {
-                        Button("Delete", role: .destructive) {
-                            NotificationCenter.default.post(name: .deleteGroupByID, object: gid)
+                        Button(String(localized: "Delete"), role: .destructive) {
+                            NotificationCenter.default.post(
+                                name: .deleteGroupByID,
+                                object: gid
+                            )
                         }
                     }
                 }
@@ -188,11 +246,13 @@ struct ContentView: View {
         mainTaskGroups.map { main in
             let kids: [SidebarNode] = main.taskGroupIDs.compactMap { gid in
                 guard let group = taskGroups.first(where: { $0.id == gid }) else { return nil }
-                return SidebarNode(id: group.id,
-                                   title: group.title,
-                                   symbolName: group.symbolName,
-                                   selection: .group(group.id),
-                                   children: nil)
+                return SidebarNode(
+                    id: group.id,
+                    title: group.title,
+                    symbolName: group.symbolName,
+                    selection: .group(group.id),
+                    children: nil
+                )
             }
 
             let defaultSelection: SidebarSelection = {
@@ -201,11 +261,13 @@ struct ContentView: View {
                 return .profile
             }()
 
-            return SidebarNode(id: main.id,
-                               title: main.title,
-                               symbolName: main.symbolName,
-                               selection: defaultSelection,
-                               children: kids.isEmpty ? nil : kids)
+            return SidebarNode(
+                id: main.id,
+                title: main.title,
+                symbolName: main.symbolName,
+                selection: defaultSelection,
+                children: kids.isEmpty ? nil : kids
+            )
         }
     }
 
@@ -218,9 +280,16 @@ struct ContentView: View {
             taskGroups = []
         }
 
-        NotificationCenter.default.addObserver(forName: .deleteGroupByID, object: nil, queue: .main) { note in
-            guard let gid = note.object as? TaskGroup.ID,
-                  let group = taskGroups.first(where: { $0.id == gid }) else { return }
+        // Delete a single TaskGroup by ID (sub-group)
+        NotificationCenter.default.addObserver(
+            forName: .deleteGroupByID,
+            object: nil,
+            queue: .main
+        ) { note in
+            guard
+                let gid = note.object as? TaskGroup.ID,
+                let group = taskGroups.first(where: { $0.id == gid })
+            else { return }
             deleteGroup(group)
         }
     }
@@ -231,6 +300,19 @@ struct ContentView: View {
             mainTaskGroups = decoded
         } else {
             mainTaskGroups = []
+        }
+
+        // Delete a MainTaskGroup by ID (parent)
+        NotificationCenter.default.addObserver(
+            forName: .deleteMainByID,
+            object: nil,
+            queue: .main
+        ) { note in
+            guard
+                let mid = note.object as? MainTaskGroup.ID,
+                let main = mainTaskGroups.first(where: { $0.id == mid })
+            else { return }
+            deleteMain(main)
         }
     }
 
@@ -246,6 +328,7 @@ struct ContentView: View {
         }
     }
 
+    // Delete a TaskGroup (sub-group) and detach from all parents
     private func deleteGroup(_ group: TaskGroup) {
         if selection == .group(group.id) { selection = nil }
         taskGroups.removeAll { $0.id == group.id }
@@ -253,6 +336,31 @@ struct ContentView: View {
             mainTaskGroups[i].taskGroupIDs.removeAll { $0 == group.id }
         }
         saveTaskGroups()
+        saveMainTaskGroups()
+    }
+
+    // Delete a MainTaskGroup (parent) and cascade-delete orphaned child groups
+    private func deleteMain(_ main: MainTaskGroup) {
+        mainTaskGroups.removeAll { $0.id == main.id }
+
+        for gid in main.taskGroupIDs {
+            let stillReferencedElsewhere = mainTaskGroups.contains { $0.taskGroupIDs.contains(gid) }
+
+            if !stillReferencedElsewhere,
+               let group = taskGroups.first(where: { $0.id == gid }) {
+                deleteGroup(group)
+            }
+        }
+
+        if case .group(let gid) = selection,
+           !taskGroups.contains(where: { $0.id == gid }) {
+            if let any = taskGroups.first?.id {
+                selection = .group(any)
+            } else {
+                selection = .profile
+            }
+        }
+
         saveMainTaskGroups()
     }
 
@@ -268,13 +376,19 @@ struct ContentView: View {
                 }
             }
         case .newParent(let title, let symbol):
-            let newMain = MainTaskGroup(title: title, symbolName: symbol, taskGroupIDs: [newGroup.id])
+            let newMain = MainTaskGroup(
+                title: title,
+                symbolName: symbol,
+                taskGroupIDs: [newGroup.id]
+            )
             mainTaskGroups.append(newMain)
         case .auto:
             if mainTaskGroups.isEmpty {
-                let defaultMain = MainTaskGroup(title: "My Groups",
-                                                symbolName: "folder",
-                                                taskGroupIDs: [newGroup.id])
+                let defaultMain = MainTaskGroup(
+                    title: String(localized: "My Groups"),
+                    symbolName: "folder",
+                    taskGroupIDs: [newGroup.id]
+                )
                 mainTaskGroups.append(defaultMain)
             } else if !mainTaskGroups[0].taskGroupIDs.contains(newGroup.id) {
                 mainTaskGroups[0].taskGroupIDs.append(newGroup.id)
@@ -287,74 +401,11 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Profile
-
-struct ProfileView: View {
-    var appAccentColor: Color
-    @Binding var isDarkMode: Bool
-    @Binding var profileName: String
-    
-    // Fixed creation date: Oct 7, 1996 at 12:00 UTC to avoid TZ shift
-    private let createdAt: Date = {
-        var comps = DateComponents()
-        comps.calendar = Calendar(identifier: .gregorian)
-        comps.timeZone = TimeZone(secondsFromGMT: 0)
-        comps.year = 1996
-        comps.month = 10
-        comps.day = 7
-        comps.hour = 12
-        return comps.date ?? Date(timeIntervalSince1970: 845380800)
-    }()
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Profile") {
-                    HStack {
-                        Image(systemName: "person.crop.circle")
-                            .font(.system(size: 48))
-                            .foregroundStyle(appAccentColor)
-                        TextField("Name", text: $profileName)
-                            .textInputAutocapitalization(.words)
-                    }
-                }
-
-                Section("Appearance") {
-                    Toggle(isOn: $isDarkMode) {
-                        Label("Dark Mode",
-                              systemImage: isDarkMode ? "moon.fill" : "sun.max.fill")
-                    }
-                    .tint(appAccentColor)
-                }
-
-                Section("Preferences") {
-                    Label("Notifications", systemImage: "bell.badge.fill")
-                    Label("Settings", systemImage: "gear")
-                }
-
-                Section("Account") {
-                    HStack {
-                        Label("Created At", systemImage: "calendar")
-                        Spacer()
-                        Text(createdAt, format: .dateTime
-                            .year().month(.abbreviated).day())
-                        .monospacedDigit()
-                        .foregroundStyle(.secondary)
-                    }
-                    Label("Sign Out", systemImage: "arrow.right.to.line.circle.fill")
-                        .foregroundStyle(.red)
-                }
-            }
-            .navigationTitle("My Profile")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-}
-
 // MARK: - Helpers
 
 private extension Notification.Name {
     static let deleteGroupByID = Notification.Name("deleteGroupByID")
+    static let deleteMainByID = Notification.Name("deleteMainByID")
 }
 
 // MARK: - Multiline support

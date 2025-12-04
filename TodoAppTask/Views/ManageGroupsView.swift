@@ -10,9 +10,13 @@ struct ManageGroupsView: View {
     var appAccentColor: Color
     @Binding var mains: [MainTaskGroup]
 
+    // Total existing TaskGroups in the app (passed from ContentView)
+    var currentGroupCount: Int
+
     var onCreate: (String, String, ParentChoice) -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var storeManager: StoreManager
 
     @State private var newGroupName: String = ""
     @State private var newGroupIcon: String = "checklist"
@@ -27,6 +31,8 @@ struct ManageGroupsView: View {
     @State private var newParentTitle: String = ""
     @State private var newParentSymbol: String = "folder"
 
+    @State private var showUpgradeAlert = false
+
     private let groupIcons = [
         "checklist", "star.fill", "briefcase.fill", "heart.fill",
         "book.fill", "house.fill", "person.fill", "cart.fill",
@@ -38,6 +44,7 @@ struct ManageGroupsView: View {
             Form {
                 Section(String(localized: "Add New Group")) {
                     TextField(String(localized: "Group Name (e.g., Work)"), text: $newGroupName)
+                        .accessibilityIdentifier("newGroupNameTestField")
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
@@ -104,12 +111,22 @@ struct ManageGroupsView: View {
                         HStack {
                             Image(systemName: "plus.circle.fill")
                             Text(String(localized: "Add New Group"))
+                                .accessibilityIdentifier("addNewGroupButton2")
+
                         }
                     }
                     .disabled(newGroupName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                               || (attachMode == .existing && selectedMainID == nil)
                               || (attachMode == .newParent && newParentTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty))
                 }
+            }
+            .alert(String(localized: "Upgrade to Pro"), isPresented: $showUpgradeAlert) {
+                Button(String(localized: "Upgrade for $5.99")) {
+                    storeManager.buyProVersion()
+                }
+                Button(String(localized: "Cancel"), role: .cancel) { }
+            } message: {
+                Text(String(localized: "You’ve reached the free limit for groups or main groups. Upgrade to Pro to unlock unlimited groups."))
             }
         }
         .tint(appAccentColor)
@@ -118,6 +135,18 @@ struct ManageGroupsView: View {
     private func createTapped() {
         let title = newGroupName.trimmingCharacters(in: .whitespacesAndNewlines)
         let symbol = newGroupIcon
+
+        // Enforce group limit BEFORE creating anything
+        guard storeManager.canAddGroup(currentGroupCount: currentGroupCount) else {
+            showUpgradeAlert = true
+            return
+        }
+
+        // If user is trying to create a brand new parent, also enforce main-group limit
+        if attachMode == .newParent && !storeManager.canAddMainGroup(currentMainCount: mains.count) {
+            showUpgradeAlert = true
+            return
+        }
 
         let parent: ParentChoice
         switch attachMode {

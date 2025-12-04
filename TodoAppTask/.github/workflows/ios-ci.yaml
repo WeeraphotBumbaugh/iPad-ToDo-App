@@ -1,0 +1,29 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build iOS App
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: List Xcode Schemes
+        run: xcodebuild -list -project "StudentsToDo/StudentsToDo.xcodeproj"
+
+      - name: Build App
+        run: |
+          xcodebuild clean build \
+            -project "StudentsToDo/StudentsToDo.xcodeproj" \
+            -scheme "StudentsToDo" \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO

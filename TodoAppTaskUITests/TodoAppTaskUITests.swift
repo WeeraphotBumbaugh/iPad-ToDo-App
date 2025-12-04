@@ -17,27 +17,68 @@ final class TodoAppTaskUITests: XCTestCase {
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    
+    func testAddGroupFlow() {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let schoolButton = app.buttons["school_data"]
+        XCTAssertTrue(schoolButton.waitForExistence(timeout: 5.0), "The school button should exist on the home screen")
+        schoolButton.tap()
+        
+        let addNewGroupButton = app.buttons["addNewGroupButton"]
+        XCTAssertTrue(addNewGroupButton.waitForExistence(timeout: 2.0), "Icon is present")
+        addNewGroupButton.tap()
+        
+        let nameField = app.textFields["newGroupNameTestField"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 2.0), "Text field is visible")
+        nameField.tap()
+        nameField.typeText("UI Test Group")
+        
+        let addButton = app.buttons["addNewGroupButton2"]
+        addButton.tap()
+        
+        XCTAssertTrue(addNewGroupButton.exists, "Should return to main lit")
+        
     }
+    
+    func testAddTaskFlow() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let schoolButton = app.buttons["school_data"]
+        XCTAssertTrue(schoolButton.waitForExistence(timeout: 5.0), "The school button should exist on the home screen")
+        schoolButton.tap()
+        
+        let addNewGroupButton = app.buttons["addNewGroupButton"]
+        XCTAssertTrue(addNewGroupButton.waitForExistence(timeout: 2.0), "Icon is present")
+        addNewGroupButton.tap()
+        
+        let nameField = app.textFields["newGroupNameTestField"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 2.0), "Text field is visible")
+        nameField.tap()
+        nameField.typeText("UI Test Group 2")
+        
+        let addButton = app.buttons["addNewGroupButton2"]
+        addButton.tap()
+        
+        let groupTitle = app.navigationBars.staticTexts["UI Test Group 2"]
+        XCTAssertTrue(groupTitle.waitForExistence(timeout: 3.0), "Should be showing the detail for UI Test Group 2")
 
-    @MainActor
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        let addTaskButton = app.buttons["addTaskButton"]
+        XCTAssertTrue(addTaskButton.waitForExistence(timeout: 2.0), "The add task button should be visible")
+        addTaskButton.tap()
+
+        let taskTitleField = app.textFields["taskTitleField"]
+        XCTAssertTrue(taskTitleField.waitForExistence(timeout: 2.0),"The task title field should be visible")
+        taskTitleField.tap()
+        taskTitleField.typeText("UI Test Task 1")
+        app.keyboards.buttons["return"].tap()
+        
+        XCTAssertTrue(taskTitleField.waitForExistence(timeout: 2.0),"The task title field should still exist after submiting")
+        
+        let value = taskTitleField.value as? String
+        XCTAssertEqual(value, "UI Test Task 1", "The task title field should contain the text typed")
+
     }
 }

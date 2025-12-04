@@ -65,6 +65,7 @@ struct HomeView: View {
                     ProfileCard(profile: profile)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier(profile.storageKey)
             }
         }
         .padding(.horizontal, 80)
