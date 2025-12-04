@@ -52,6 +52,11 @@
 			path = TodoAppTaskUITests;
 			sourceTree = "<group>";
 		};
+		E67262192EE134A10070DB0B /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 				0E7F80922EB69AD90058D8F7 /* TodoAppTaskTests */,
 				0E7F809C2EB69AD90058D8F7 /* TodoAppTaskUITests */,
 				0E7F80802EB69AD60058D8F7 /* Products */,
+				E67262192EE134A10070DB0B /* .github */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +124,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0E7F80812EB69AD60058D8F7 /* TodoAppTask */,
+				E67262192EE134A10070DB0B /* .github */,
 			);
 			name = TodoAppTask;
 			packageProductDependencies = (
