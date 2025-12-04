@@ -16,13 +16,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List Xcode Schemes
-        run: xcodebuild -list -project "iPad-ToDo-App/TodoAppTask.xcodeproj"
+        run: xcodebuild -list -project "ToDo Tracker App/TodoAppTask.xcodeproj"
 
       - name: Build App
         run: |
           xcodebuild clean build \
-            -project "StudentsToDo/StudentsToDo.xcodeproj" \
-            -scheme "StudentsToDo" \
+            -project "ToDo Tracker App/TodoAppTask.xcodeproj" \
+            -scheme "TodoAppTask" \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
