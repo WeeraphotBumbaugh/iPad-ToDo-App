@@ -29,7 +29,7 @@ final class ToDoTests: XCTestCase {
         let task1 = TaskItem(title: "Test task")
         let task2 = TaskItem(title: "Test task 2", isCompleted: true)
         
-        //given
+        //given 
         let group = TaskGroup(title: "Test Group 1", symbolName: "briefcase", tasks: [task1, task2])
         
         //then

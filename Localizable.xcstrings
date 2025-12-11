@@ -576,6 +576,9 @@
         }
       }
     },
+    "Free plan includes up to 3 Task Groups and 2 Main Groups. Upgrade for unlimited groups and more flexible organization." : {
+
+    },
     "Group Deleted" : {
       "localizations" : {
         "ar" : {
@@ -642,6 +645,9 @@
         }
       }
     },
+    "High" : {
+
+    },
     "Home" : {
       "localizations" : {
         "ar" : {
@@ -685,6 +691,9 @@
           }
         }
       }
+    },
+    "Low" : {
+
     },
     "Main iPad shows editor" : {
       "localizations" : {
@@ -795,6 +804,9 @@
           }
         }
       }
+    },
+    "Medium" : {
+
     },
     "Mode" : {
       "localizations" : {
@@ -1060,6 +1072,9 @@
         }
       }
     },
+    "One-time purchase: $3.99" : {
+
+    },
     "Parent" : {
       "localizations" : {
         "ar" : {
@@ -1213,6 +1228,15 @@
           }
         }
       }
+    },
+    "Premium Groups Upgrade" : {
+
+    },
+    "Premium Unlocked" : {
+
+    },
+    "Priority" : {
+
     },
     "Profile" : {
       "localizations" : {
@@ -1522,7 +1546,13 @@
         }
       }
     },
+    "Upgrade" : {
+
+    },
     "Upgrade for $5.99" : {
+
+    },
+    "Upgrade to Premium" : {
 
     },
     "Upgrade to Pro" : {
@@ -1615,6 +1645,9 @@
           }
         }
       }
+    },
+    "You can create unlimited Main Groups and Task Groups. Thank you for supporting the app." : {
+
     },
     "You’ve reached the free limit for groups or main groups. Upgrade to Pro to unlock unlimited groups." : {
 

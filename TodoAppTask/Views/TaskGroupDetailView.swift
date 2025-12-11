@@ -55,6 +55,10 @@ struct TaskGroupDetailView: View {
                     .onMove(perform: moveTask)
                 } header: {
                     Text(String(localized: "Tasks"))
+                    
+                    Spacer()
+                    
+                    Image(systemName: "arrow.up.down.circle")
                         .font(.headline)
                         .foregroundStyle(appAccentColor)
                 }
@@ -77,6 +81,16 @@ struct TaskGroupDetailView: View {
                     .accessibilityLabel(Text(String(localized: "Add Task")))
                 }
             }
+            .onAppear{
+                withAnimation {
+                    group.sortTasks()
+                }
+            }
+            .onChange(of: group.tasks) {oldValue, newValue in
+                withAnimation{
+                    group.sortTasks()
+                }
+            }
             .overlay {
                 if group.tasks.isEmpty {
                     ContentUnavailableView(
@@ -97,6 +111,7 @@ struct TaskGroupDetailView: View {
         withAnimation {
             let newTask = TaskItem(title: "", isCompleted: false)
             group.tasks.append(newTask)
+            group.sortTasks()
             focusedTaskID = newTask.id
         }
     }
@@ -122,6 +137,21 @@ struct TaskRow: View {
             .accessibilityLabel(Text(task.isCompleted
                                      ? String(localized: "Mark incomplete")
                                      : String(localized: "Mark complete")))
+            
+            Menu {
+                Picker("Priority", selection: $task.priority) {
+                    Text("Low").tag(Priority.low)
+                    Text("Medium").tag(Priority.medium)
+                    Text("High").tag(Priority.high)
+                }
+            } label: {
+                Image(systemName: "flag.fill")
+                    .font(.subheadline)
+                    .foregroundStyle(task.priority.color)
+                    .padding(4)
+                    .background(task.priority.color.opacity(0.1))
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
+            }
 
             VStack(alignment: .leading, spacing: 6) {
                 TextField(String(localized: "New Task"), text: $task.title)

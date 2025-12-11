@@ -17,10 +17,11 @@ struct ContentView: View {
 
     @AppStorage("profileName") private var profileName = "Weeraphot Bumbaugh"
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @AppStorage("isPremiumUser") private var isPremiumUser: Bool = false
 
     private let appAccentColor = Color.cyan
-    private let taskGroupsKey = "taskGroupsData"
-    private let mainTaskGroupsKey = "mainTaskGroupsData"
+    private var taskGroupsKey: String { "taskGroupsData_\(storageKey)" }
+    private var mainTaskGroupsKey: String { "mainTaskGroupsData_\(storageKey)" }
 
     var storageKey: String
     var profileTitle: LocalizedStringKey
@@ -36,6 +37,7 @@ struct ContentView: View {
             detailView
         }
         .navigationSplitViewStyle(.balanced)
+        .navigationSplitViewColumnWidth(min: 0, ideal: 250, max: 300)
         .sheet(isPresented: $isManagingGroups) {
             ManageGroupsView(
                 appAccentColor: appAccentColor,
@@ -76,7 +78,6 @@ struct ContentView: View {
 
     // MARK: - Split views
 
-    // Sidebar extracted to reduce complexity in body
     private var sidebarView: some View {
         List(selection: $selection) {
             Section {
@@ -102,14 +103,12 @@ struct ContentView: View {
             }
         }
         .listStyle(.sidebar)
-        .navigationTitle(String(localized: "My TODO Tracker"))
-        .navigationBarTitleDisplayMode(.inline)
+        .padding(.top, -20)
         .toolbar {
             toolbarContent
         }
     }
 
-    // Detail extracted so the switch is not inside body directly
     private var detailView: some View {
         Group {
             switch selection {
@@ -134,7 +133,8 @@ struct ContentView: View {
                 ProfileView(
                     appAccentColor: appAccentColor,
                     isDarkMode: $isDarkMode,
-                    profileName: $profileName
+                    profileName: $profileName,
+                    isPremiumUser: $isPremiumUser
                 )
 
             case nil:
@@ -154,21 +154,6 @@ struct ContentView: View {
 
     @ToolbarContentBuilder
     private var toolbarContent: some ToolbarContent {
-        // Toggle Sidebar
-        ToolbarItem(placement: .topBarLeading) {
-            let iconName = (columnVisibility == .all) ? "sidebar.leading" : "sidebar.trailing"
-
-            Button {
-                withAnimation {
-                    columnVisibility = (columnVisibility == .all) ? .detailOnly : .all
-                }
-            } label: {
-                Image(systemName: iconName)
-            }
-            .keyboardShortcut("s", modifiers: [.command, .shift])
-            .help(String(localized: "Toggle Sidebar"))
-        }
-
         // Center title
         ToolbarItem(placement: .principal) {
             Text(String(localized: "My TODO Tracker"))
@@ -208,7 +193,6 @@ struct ContentView: View {
                 }
                 .padding(.vertical, 4)
                 .contextMenu {
-                    // Delete main group (parent)
                     Button(String(localized: "Delete"), role: .destructive) {
                         NotificationCenter.default.post(
                             name: .deleteMainByID,
@@ -280,7 +264,6 @@ struct ContentView: View {
             taskGroups = []
         }
 
-        // Delete a single TaskGroup by ID (sub-group)
         NotificationCenter.default.addObserver(
             forName: .deleteGroupByID,
             object: nil,
@@ -302,7 +285,6 @@ struct ContentView: View {
             mainTaskGroups = []
         }
 
-        // Delete a MainTaskGroup by ID (parent)
         NotificationCenter.default.addObserver(
             forName: .deleteMainByID,
             object: nil,
